@@ -17,7 +17,7 @@ const Art = () => {
             }
             const data = await response.json();
             // Extracting the object IDs
-            const objectIds = data.objectIDs.slice(0, 500); 
+            const objectIds = data.objectIDs.slice(0, 300); 
             // Fetching the detailed data for each object ID
             const artworks = await Promise.all(objectIds.map(async (objectId) => {
                 try {
