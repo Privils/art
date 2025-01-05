@@ -5,6 +5,7 @@ import image3 from "./images/DP236100.jpg";
 import image4 from "./images/DT1236.jpg";
 import image5 from "./images/DT1241.jpg";
 import image6 from "./images/DT1531a.jpg";
+import { Link } from "react-router-dom";
 
 const Art = () => {
   return (
@@ -19,27 +20,30 @@ const Art = () => {
             Immerse yourself in the stories, craftsmanship, and traditions that
             shape our shared past.
           </p>
-          <button class="cta-button"><a href="/Page">Start your journey</a></button>
+          <button class="cta-button">
+            <Link to="/Page">Start your journey</Link>
+            
+            </button>
         </div>
       </div>
       <div className="circles-containner">
         <div className="circle">
-          <img src={image1} alt="" className="inside-circle" loading="lady"/>
+          <img src={image1} alt="" className="inside-circle" loading="lazy"/>
         </div>
         <div className="circle">
-          <img src={image2} alt="" className="inside-circle" loading="lady"/>
+          <img src={image2} alt="" className="inside-circle" loading="lazy"/>
         </div>
         <div className="circle">
-          <img src={image3} alt="" className="inside-circle" loading="lady"/>
+          <img src={image3} alt="" className="inside-circle" loading="lazy"/>
         </div>
         <div className="circle">
-          <img src={image4} alt="" className="inside-circle" loading="lady"/>
+          <img src={image4} alt="" className="inside-circle" loading="lazy"/>
         </div>
         <div className="circle">
-          <img src={image5} alt="" className="inside-circle" loading="lady"/>
+          <img src={image5} alt="" className="inside-circle" loading="lazy"/>
         </div>
         <div className="circle">
-          <img src={image6} alt="" className="inside-circle" loading="lady"/>
+          <img src={image6} alt="" className="inside-circle" loading="lazy"/>
         </div>
       </div>
       <div className="moreInfo">
@@ -48,7 +52,7 @@ const Art = () => {
           from across cultures and time periods, including modern pieces. for
           more images please
           <button className="cta-button my-btn">
-            <a href="/Page">click here</a>
+            <Link to="/Page">click here</Link>
           </button>
           to view our various images from different countries
         </p>
@@ -57,9 +61,9 @@ const Art = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <a href="/" className="logo">
+            <Link href="/" className="logo">
               ArtVista
-            </a>
+            </Link>
             <p>Your global art and culture journey starts here.</p>
           </div>
 
@@ -67,13 +71,13 @@ const Art = () => {
             <h4>Explore</h4>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link href="/">Home</Link>
               </li>
               <li>
                 <a href="#">About Us</a>
               </li>
               <li>
-                <a href="/Page">Gallery</a>
+                <Link href="/Page">Gallery</Link>
               </li>
               <li>
                 <a href="#">Contact</a>
@@ -100,7 +104,7 @@ const Art = () => {
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="LinkedIn">
+               <a  href="#" aria-label="LinkedIn">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
               </li>
