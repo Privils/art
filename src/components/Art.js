@@ -24,22 +24,22 @@ const Art = () => {
       </div>
       <div className="circles-containner">
         <div className="circle">
-          <img src={image1} alt="" className="inside-circle" />
+          <img src={image1} alt="" className="inside-circle" loading="lady"/>
         </div>
         <div className="circle">
-          <img src={image2} alt="" className="inside-circle" />
+          <img src={image2} alt="" className="inside-circle" loading="lady"/>
         </div>
         <div className="circle">
-          <img src={image3} alt="" className="inside-circle" />
+          <img src={image3} alt="" className="inside-circle" loading="lady"/>
         </div>
         <div className="circle">
-          <img src={image4} alt="" className="inside-circle" />
+          <img src={image4} alt="" className="inside-circle" loading="lady"/>
         </div>
         <div className="circle">
-          <img src={image5} alt="" className="inside-circle" />
+          <img src={image5} alt="" className="inside-circle" loading="lady"/>
         </div>
         <div className="circle">
-          <img src={image6} alt="" className="inside-circle" />
+          <img src={image6} alt="" className="inside-circle" loading="lady"/>
         </div>
       </div>
       <div className="moreInfo">
