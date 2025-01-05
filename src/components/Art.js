@@ -1,101 +1,119 @@
 import React, { useEffect, useState } from "react";
+import image1 from "./images/1981.459.32_a.jpeg";
+import image2 from "./images/DP133665.jpg";
+import image3 from "./images/DP236100.jpg";
+import image4 from "./images/DT1236.jpg";
+import image5 from "./images/DT1241.jpg";
+import image6 from "./images/DT1531a.jpg";
 
 const Art = () => {
-    const [displayArt, setDisplayArt] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-    
-    useEffect(() => {
-        getArtByCulture('African');//fetching initail art culture
-    }, []);
-    
-    const getArtByCulture = async (culture) => { 
-        try {
-            const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=culture:${culture}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch data');
-            }
-            const data = await response.json();
-            // Extracting the object IDs
-            const objectIds = data.objectIDs.slice(0, 300); 
-            // Fetching the detailed data for each object ID
-            const artworks = await Promise.all(objectIds.map(async (objectId) => {
-                try {
-                    const artResponse = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectId}`);
-                    if (!artResponse.ok) {
-                        throw new Error(`Failed to fetch artwork with ID ${objectId}`);
-                    }
-                    const artData = await artResponse.json();
-                    console.log(artData)
-                    return artData;
-                } catch (error) {
-                    console.error(error.message);
-                    return null; 
-                }
-            }));
-            setDisplayArt(artworks.filter(artwork => artwork !== null)); // to Filtering out null values
-            setIsLoading(false);
-        } catch (error) {
-            console.error('Error fetching art data:', error);
-            setIsLoading(false);
-            setError(error);
-setIsLoading(false);
-        }
-    };
-
-
   return (
     <>
-       <header>
-      <a href='#' className="logo">ArtVista</a>
-      <nav>
-        <ul>
-            <li>
-                <a href="/">home</a>
-            </li>
-            <li>
-                <a href="#">about</a>
-            </li>
-            <li>
-                <a href="#">contact</a>
-            </li>
-        </ul>
-      </nav>
-    </header>
-      <div className="container">
-          {isLoading ? (
-              <p className="loading">Loading...</p>
-          ) : (
-              <>
-              {error && <p>Error fetching art data: {error.message}</p>}
-                  <div className="artwork-container">
-                      {displayArt.map((artwork, index) => (
-                          artwork.primaryImage && (
-                              <Artwork key={index} artwork={artwork} />
-                          )
-                      ))}
-                  </div>
-              </>
-          )}
-      </div>
-  </>
-  )
-}
-
-const Artwork = ({ artwork }) => {
-    return (
-     <>
-        <div className="work">
-            <img src={artwork.primaryImage} alt={artwork.title} loading="lazy"/>
-            <div className="layer">
-                <h1>Art Title: {artwork.title}</h1>
-                <h3>country: <span>{artwork.country}</span></h3>
-                <h3>period: <span>{artwork.period}</span></h3>
-            </div>
+      <div className="grayContainer">
+        <div className="heroContainer">
+          <h1>Discover the World’s Rich Heritage</h1>
+          <p className="heroText">
+            Explore a diverse collection of art, artifacts, and history from
+            cultures around the globe. Our curated gallery showcases the beauty
+            and diversity of human expression across centuries and continents.
+            Immerse yourself in the stories, craftsmanship, and traditions that
+            shape our shared past.
+          </p>
+          <button class="cta-button"><a href="./Page">Start your journey</a></button>
         </div>
-      
-        </>
-    );
+      </div>
+      <div className="circles-containner">
+        <div className="circle">
+          <img src={image1} alt="" className="inside-circle" />
+        </div>
+        <div className="circle">
+          <img src={image2} alt="" className="inside-circle" />
+        </div>
+        <div className="circle">
+          <img src={image3} alt="" className="inside-circle" />
+        </div>
+        <div className="circle">
+          <img src={image4} alt="" className="inside-circle" />
+        </div>
+        <div className="circle">
+          <img src={image5} alt="" className="inside-circle" />
+        </div>
+        <div className="circle">
+          <img src={image6} alt="" className="inside-circle" />
+        </div>
+      </div>
+      <div className="moreInfo">
+        <p>
+          The Metropolitan Museum of Art, also known as The Met, features art
+          from across cultures and time periods, including modern pieces. for
+          more images please{" "}
+          <button className="cta-button my-btn">
+            <a href="../Page">click here</a>
+          </button>
+          to view our various images from different countries
+        </p>
+      </div>
+      <hr />
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <a href="/" className="logo">
+              ArtVista
+            </a>
+            <p>Your global art and culture journey starts here.</p>
+          </div>
+
+          <div className="footer-links">
+            <h4>Explore</h4>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Gallery</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-social">
+            <h4>Follow Us</h4>
+            <ul>
+              <li>
+                <a href="#" aria-label="Facebook">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Twitter">
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Instagram">
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="LinkedIn">
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; 2025 ArtVista. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </>
+  );
 };
 
-export default Art
+export default Art;
