@@ -19,7 +19,7 @@ const Art = () => {
             Immerse yourself in the stories, craftsmanship, and traditions that
             shape our shared past.
           </p>
-          <button class="cta-button"><a href="./Page">Start your journey</a></button>
+          <button class="cta-button"><a href="/Page">Start your journey</a></button>
         </div>
       </div>
       <div className="circles-containner">
@@ -46,9 +46,9 @@ const Art = () => {
         <p>
           The Metropolitan Museum of Art, also known as The Met, features art
           from across cultures and time periods, including modern pieces. for
-          more images please{" "}
+          more images please
           <button className="cta-button my-btn">
-            <a href="../Page">click here</a>
+            <a href="/Page">click here</a>
           </button>
           to view our various images from different countries
         </p>
@@ -73,7 +73,7 @@ const Art = () => {
                 <a href="#">About Us</a>
               </li>
               <li>
-                <a href="#">Gallery</a>
+                <a href="/Page">Gallery</a>
               </li>
               <li>
                 <a href="#">Contact</a>
